@@ -4,6 +4,7 @@ import sys
 
 from datetime import datetime, timezone
 
+
 class JSONFormatter(logging.Formatter):
     """
     Formatter that outputs log records in structured JSON format.

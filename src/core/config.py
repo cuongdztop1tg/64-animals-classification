@@ -14,8 +14,8 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 
 # result path
-RESULT_PATH = './models'
+RESULT_PATH = "./models"
 
 # data paths
-RAW_DATA_PATH = './data/image'
-PROCESSED_DATA_PATH = './data/processed'
+RAW_DATA_PATH = "./data/image"
+PROCESSED_DATA_PATH = "./data/processed"

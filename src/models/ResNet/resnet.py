@@ -1,15 +1,22 @@
 import torch.nn as nn
 from .residual_block import ResidualBlock
 
+
 class ResNet(nn.Module):
     def __init__(self, input_dim, output_dim):
         super().__init__()
 
         self.stem = nn.Sequential(
-            nn.Conv2d(in_channels=input_dim, out_channels=64, kernel_size=7, stride=2, padding=3),
+            nn.Conv2d(
+                in_channels=input_dim,
+                out_channels=64,
+                kernel_size=7,
+                stride=2,
+                padding=3,
+            ),
             nn.BatchNorm2d(64),
             nn.ReLU(),
-            nn.MaxPool2d(kernel_size=3, padding=1, stride=2)
+            nn.MaxPool2d(kernel_size=3, padding=1, stride=2),
         )
 
         self.stage1 = self.make_stage(64, 64, 3, 1)
@@ -18,7 +25,7 @@ class ResNet(nn.Module):
         self.stage4 = self.make_stage(1024, 512, 3, 2)
 
         self.avgpool2d = nn.AdaptiveAvgPool2d((1, 1))
-        
+
         self.fc = nn.Sequential(
             nn.Flatten(),
             nn.Linear(in_features=2048, out_features=output_dim),
