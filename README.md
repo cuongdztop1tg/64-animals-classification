@@ -134,6 +134,17 @@ Evaluation results may include:
 * Loss
 * Confusion matrix
 
+### 6.4 Run Inference API (Uvicorn)
+
+This project supports model inference via a REST API using **FastAPI** and **Uvicorn**.
+
+#### Start the API server
+
+From the project root directory, run:
+
+```bash
+uvicorn src.app:app --host 0.0.0.0 --port 8000 --reload
+
 ---
 ## 7. Reproducibility
 
