@@ -43,7 +43,6 @@ datasets/
 checkpoints/
 outputs/
 runs/
-saved_models/
 
 # IDE / Editor
 .vscode/
